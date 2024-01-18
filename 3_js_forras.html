@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="hu">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript Unit teszt feladat</title>
+	<script type="text/javascript">
+		<!-- Ide jön  a feladat megoldása -->
+
+		//kivalogatParosOtven
+		var tomb1 = [30, 55, 12, 80, 60, 100];
+		function kivalogatParosOtven(tomb) {
+
+			
+			var aktTomb = [];
+
+			var szamlalo = 0;
+			while (szamlalo < tomb.length) {
+				if (tomb[szamlalo] % 2 == 0 && tomb[szamlalo] > 50) {
+
+					aktTomb.push(tomb[szamlalo]);
+
+				}
+				szamlalo++;
+			}
+			return aktTomb;
+		}
+		kivalogatParosOtven(tomb1);
+
+		//aBetukSzamaDiv
+		function aBetukSzamaDiv() {
+			var db = 0;
+			var div = document.getElementById("div");
+			if (div) {
+				div = document.getElementById("div").innerHTML;
+				for (var i = 0; i < div.length; i++) {
+					var char = div[i]; if (char === 'a' || char === 'A') {
+						db++;
+						console.log(div[i]);
+					}
+				}
+			} return db;
+		} aBetukSzamaDiv(); 
+		
+		//osszeadasFeliras 
+		function	osszeadasFeliras(eredmeny, op1, op2){
+			var keresett = document.getElementsByClassName(eredmeny)[0]; 
+
+					if (keresett){
+
+						console.log("Elem megtalálva");
+						
+						var op1 = Number(op1);
+						var op2 = Number(op2);
+
+						var p = document.createElement("p");
+					
+						if (!isNaN(op1) && !isNaN(op2)) {
+							var osszeg = op1 + op2;
+							p.textContent = `${op1} + ${op2} = ${osszeg}`;
+							keresett.appendChild(p);
+				
+						}
+					}
+					else
+					 {
+						console.log(" A keresett osztaly nem találhato");
+					}
+		}
+
+
+    osszeadasFeliras("eredmeny",5,12);
+
+	</script>
+	<!--Eddig-->
+	<script src="testBaseUnit.js"></script>
+</head>
+
+<body>
+
+	<div id="div"></div>
+	<div class="eredmeny"></div>
+
+
+	<hr>
+	<div id="testResult">
+		<h2>Tesztek</h2>
+	</div>
+</body>
+
+</html>
